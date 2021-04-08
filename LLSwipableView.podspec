@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name                     = 'LLSwipableView'
   spec.version                  = '1.0.4'
-  spec.license                  = { :type => 'GNU GPL' }
+  spec.license                  = { :type => 'MIT' }
   spec.homepage                 = 'https://github.com/LotusLambda/LLSwipableView'
   spec.authors                  = {
     'Aron Balog' => 'aronbalog@gmail.com',
