@@ -49,7 +49,7 @@ public struct SwipableView<Content: View, ActionsContent: View>: View {
             }
             .animation(animation)
             .simultaneousGesture(
-                DragGesture(minimumDistance: 0, coordinateSpace: CoordinateSpace.global)
+                DragGesture(minimumDistance: 5, coordinateSpace: CoordinateSpace.global)
                     .onChanged({ (value) in
                         self.contentOffset = Double(value.translation.width)
                     })
