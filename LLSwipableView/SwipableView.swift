@@ -49,15 +49,27 @@ public struct SwipableView<Content: View, ActionsContent: View>: View {
             }
             .animation(animation)
             .simultaneousGesture(
-                DragGesture(minimumDistance: 5, coordinateSpace: CoordinateSpace.global)
+                DragGesture(minimumDistance: 5, coordinateSpace: CoordinateSpace.local)
                     .onChanged({ (value) in
+                        let offset = Double(value.translation.width)
+                        if offset > 0 && abs(offset) <= actionsContentSize
+                           {
+                            self.contentOffset = 0
+                            return
+                        }
+                        
+                        if offset < 0 && abs(offset) <= actionsContentSize {
+                            self.contentOffset = 0
+                            return
+                        }
+                        
                         self.contentOffset = Double(value.translation.width)
                     })
                     .onEnded({ (value) in
                         if !areActionsVisible {
                             switch actionContentPosition {
                             case .leading:
-                                if abs(self.contentOffset) > self.actionsContentSize / 2 {
+                                if abs(self.contentOffset) > self.actionsContentSize * 0.66 {
                                     self.contentOffset = self.actionsContentSize
                                     self.areActionsVisible = true
                                 } else {
@@ -65,7 +77,7 @@ public struct SwipableView<Content: View, ActionsContent: View>: View {
                                     self.areActionsVisible = false
                                 }
                             case .trailing:
-                                if abs(self.contentOffset) > self.actionsContentSize / 2 {
+                                if abs(self.contentOffset) > self.actionsContentSize {
                                     self.contentOffset = -self.actionsContentSize
                                     self.areActionsVisible = true
                                 } else {
@@ -85,7 +97,8 @@ public struct SwipableView<Content: View, ActionsContent: View>: View {
                                     self.areActionsVisible = false
                                 }
                             case .trailing:
-                                if abs(self.contentOffset) > self.actionsContentSize {
+                                print(abs(self.contentOffset), self.actionsContentSize)
+                                if self.contentOffset < self.actionsContentSize {
                                     self.contentOffset = -self.actionsContentSize
                                     self.areActionsVisible = true
                                 } else {
