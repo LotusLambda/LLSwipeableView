@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SwipableView<Content: View, ActionsContent: View>: View {
+public struct SwipeableView<Content: View, ActionsContent: View>: View {
     let content: () -> Content
     let actionsContent: () -> ActionsContent
     
@@ -49,7 +49,7 @@ public struct SwipableView<Content: View, ActionsContent: View>: View {
             }
             .animation(animation)
             .simultaneousGesture(
-                DragGesture(minimumDistance: 5, coordinateSpace: CoordinateSpace.local)
+                DragGesture(minimumDistance: 1, coordinateSpace: CoordinateSpace.local)
                     .onChanged({ (value) in
                         let offset = Double(value.translation.width)
                         if offset > 0 && abs(offset) <= actionsContentSize

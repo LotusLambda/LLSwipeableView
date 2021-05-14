@@ -6,11 +6,11 @@ struct ContentView: View {
         "\(char)"
     }
     
-    var body: some View {
+    var body: some View {   
         ScrollView {
             VStack {
                 ForEach(items, id: \.self) { (item) in
-                    SwipableView(content: {
+                    SwipeableView(content: {
                         HStack {
                             Image("image")
                                 .resizable()
@@ -19,8 +19,6 @@ struct ContentView: View {
                                 .clipped()
                             
                             Text(item)
-                            
-                            Spacer()
                         }
                     }, actionsContent: {
                         HStack(spacing: 0) {
@@ -46,11 +44,12 @@ struct ContentView: View {
                                     .background(Color.orange)
                             })
                         }
-                    }, actionContentPosition: .leading)
+                    },
+                    actionContentPosition: .trailing,
+                    animation: Animation.spring()
+                    )
                     .frame(height: 75)
                 }
-                
-                Spacer()
             }
         }
     }
