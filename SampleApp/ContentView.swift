@@ -1,5 +1,5 @@
 import SwiftUI
-import LLSwipableView
+import LLSwipeableView
 
 struct ContentView: View {
     @State var items = "This is a very long sentence, maybe even longer then the one before".map { (char) -> String in

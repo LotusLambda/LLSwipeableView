@@ -1,8 +1,8 @@
-# LLSwipableView 📱📲
+# LLSwipeableView 📱📲
 
 Swipeable view which reveals action views. 💫
 
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/LLSwipableView.svg)](https://img.shields.io/cocoapods/v/LLSwipableView.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/LLSwipeableView.svg)](https://img.shields.io/cocoapods/v/LLSwipeableView.svg)
 
 - [Getting Started]
 - [Example Use]
@@ -14,7 +14,7 @@ Swipeable view which reveals action views. 💫
 
 ## Getting Started
 
-These instructions will help you integrate LLSwipableView into your project.
+These instructions will help you integrate LLSwipeableView into your project.
 
 ### Prerequisities
 
@@ -33,7 +33,7 @@ These instructions will help you integrate LLSwipableView into your project.
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.10.1+ is required to build LLSwipableView 1.0.4+.
+> CocoaPods 1.10.1+ is required to build LLSwipeableView 1.0.4+.
 
 To integrate CoreNavigation into your Xcode project using CocoaPods, specify it in your Podfile:
 
@@ -41,7 +41,7 @@ To integrate CoreNavigation into your Xcode project using CocoaPods, specify it 
 target '<Your Target Name>' do
     use_frameworks!
     
-    pod 'LLSwipableView'
+    pod 'LLSwipeableView'
 end
 ```
 
@@ -59,7 +59,7 @@ TODO
 
 Current release:
 
-- 1.0.4
+- 1.0.7
 
 ## Authors
 
